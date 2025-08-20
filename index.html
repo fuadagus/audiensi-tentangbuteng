@@ -51,6 +51,9 @@
             box-shadow: 0 4px 24px var(--shadow-color);
             padding: 0 0 32px 0;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
         }
 
         /* --- Header & Judul --- */
@@ -157,6 +160,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in animation for main container
+            const mainContainer = document.querySelector('.main-container');
+            setTimeout(() => {
+                mainContainer.style.opacity = '1';
+                mainContainer.style.transform = 'translateY(0)';
+            }, 100);
+
             const countdownEl = document.getElementById('countdown');
             const zoomBtn = document.getElementById('zoomBtn');
             const zoomLink = "https://ugm-id.zoom.us/j/94611376012?pwd=R0vO8jamozbw9CnwTKmRWSLOI507KE.1";
